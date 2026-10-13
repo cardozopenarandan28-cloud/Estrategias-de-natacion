@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Técnicas y Estrategias de Natación</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eefaff;
+            color: #17324d;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           ENCABEZADO
+        ========================= */
+
+        header {
+            min-height: 480px;
+
+            background:
+                linear-gradient(
+                    rgba(0, 120, 160, 0.72),
+                    rgba(0, 190, 215, 0.60)
+                ),
+                url("https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+
+            padding: 50px 20px;
+        }
+
+        .encabezado {
+            max-width: 950px;
+        }
+
+        .encabezado small {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .encabezado h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin: 20px 0;
+            text-shadow: 2px 3px 5px #0007;
+        }
+
+        .encabezado p {
+            font-size: 20px;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .boton {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 30px;
+
+            background: #ff7466;
+            color: white;
+
+            text-decoration: none;
+            border-radius: 30px;
+
+            font-weight: bold;
+        }
+
+        .boton:hover {
+            background: #e85b4f;
+        }
+
+        /* =========================
+           MENÚ
+        ========================= */
+
+        nav {
+            background: white;
+            padding: 17px;
+            text-align: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            box-shadow: 0 3px 12px #0002;
+        }
+
+        nav a {
+            color: #087e9d;
+            text-decoration: none;
+
+            font-weight: bold;
+            margin: 0 9px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #ff7466;
+        }
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
+        section {
+            max-width: 1150px;
+            margin: 55px auto;
+            padding: 20px;
+        }
+
+        .titulo {
+            text-align: center;
+            color: #087e9d;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #617987;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        /* =========================
+           INTRODUCCIÓN
+        ========================= */
+
+        .introduccion {
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+
+            box-shadow: 0 5px 20px #0002;
+        }
+
+        .introduccion p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* =========================
+           TARJETAS
+        ========================= */
+
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .tarjeta {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+
+            box-shadow: 0 5px 18px #0002;
+
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-7px);
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .contenido {
+            padding: 25px;
+        }
+
+        .contenido h3 {
+            color: #087e9d;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           NÚMEROS
+        ========================= */
+
+        .numero {
+            width: 45px;
+            height: 45px;
+
+            background: #0aa6c7;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            font-size: 20px;
+            font-weight: bold;
+
+            margin-bottom: 12px;
+        }
+
+        /* =========================
+           PASOS
+        ========================= */
+
+        .pasos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .paso {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+
+            display: flex;
+            gap: 20px;
+
+            box-shadow: 0 4px 15px #0002;
+        }
+
+        .paso h3 {
+            color: #087e9d;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           BANNER
+        ========================= */
+
+        .banner {
+            min-height: 320px;
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    rgba(0, 120, 160, .65),
+                    rgba(0, 180, 210, .65)
+                ),
+                url("https://images.unsplash.com/photo-1600965962361-9035dbfd1c50?auto=format&fit=crop&w=1400&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            padding: 40px;
+        }
+
+        .banner h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .banner p {
+            font-size: 20px;
+        }
+
+        /* =========================
+           CONSEJOS
+        ========================= */
+
+        .consejos {
+            background: #d8f6fc;
+            border-radius: 25px;
+            padding: 35px;
+        }
+
+        .consejos h2 {
+            color: #087e9d;
+            margin-bottom: 20px;
+        }
+
+        .consejos ul {
+            padding-left: 25px;
+        }
+
+        .consejos li {
+            margin: 10px 0;
+        }
+
+        /* =========================
+           ERRORES
+        ========================= */
+
+        .errores {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .error {
+            background: white;
+
+            border-left: 6px solid #ff7466;
+
+            padding: 25px;
+            border-radius: 15px;
+
+            box-shadow: 0 4px 12px #0002;
+        }
+
+        .error h3 {
+            color: #d9574b;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           MATERIALES
+        ========================= */
+
+        .material {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .material div {
+            background: white;
+            text-align: center;
+
+            padding: 25px 15px;
+
+            border-radius: 18px;
+
+            box-shadow: 0 4px 12px #0002;
+        }
+
+        .material span {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .material h3 {
+            color: #087e9d;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           SEGURIDAD
+        ========================= */
+
+        .seguridad {
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+
+            box-shadow: 0 5px 20px #0002;
+        }
+
+        .seguridad h3 {
+            color: #087e9d;
+            margin-top: 20px;
+        }
+
+        /* =========================
+           BENEFICIOS
+        ========================= */
+
+        .beneficios {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .beneficio {
+            background: white;
+            padding: 25px;
+            text-align: center;
+
+            border-radius: 20px;
+
+            box-shadow: 0 4px 15px #0002;
+        }
+
+        .beneficio .icono {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .beneficio h3 {
+            color: #087e9d;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           TÉCNICAS
+        ========================= */
+
+        .tecnicas {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .tecnica {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+
+            box-shadow: 0 5px 18px #0002;
+        }
+
+        .tecnica img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .tecnica .texto {
+            padding: 25px;
+        }
+
+        .tecnica h3 {
+            color: #087e9d;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           FRASE FINAL
+        ========================= */
+
+        .frase {
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #079ac0,
+                    #52d5e7
+                );
+
+            color: white;
+
+            border-radius: 25px;
+
+            padding: 55px 25px;
+        }
+
+        .frase h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           CONTACTO
+        ========================= */
+
+        .contacto {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .contacto-card {
+            background: white;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 5px 18px #0002;
+        }
+
+        .contacto-card .icono {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .contacto-card h3 {
+            color: #087e9d;
+            margin-bottom: 10px;
+        }
+
+        .contacto-card p {
+            font-size: 15px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #087e9d;
+            color: white;
+
+            text-align: center;
+
+            padding: 45px 20px;
+
+            margin-top: 60px;
+        }
+
+        footer h3 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            margin: 7px 0;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 900px) {
+
+            .tarjetas,
+            .beneficios,
+            .contacto {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .material {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tecnicas {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 700px) {
+
+            .tarjetas,
+            .pasos,
+            .errores,
+            .beneficios,
+            .material,
+            .contacto {
+                grid-template-columns: 1fr;
+            }
+
+            .encabezado h1 {
+                font-size: 38px;
+            }
+
+            .encabezado p {
+                font-size: 17px;
+            }
+
+            .paso {
+                flex-direction: column;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ENCABEZADO
+===================================================== -->
+
+<header>
+
+    <div class="encabezado">
+
+        <small>PROYECTO DE INFORMÁTICA</small>
+
+        <h1>
+            🏊‍♀️ Técnicas y Estrategias de Natación
+        </h1>
+
+        <p>
+            Aprende a nadar paso a paso, conoce las principales
+            técnicas, estrategias, beneficios y medidas de
+            seguridad para practicar natación.
+        </p>
+
+        <a href="#aprender" class="boton">
+            Comenzar a aprender
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MENÚ
+===================================================== -->
+
+<nav>
+
+    <a href="#aprender">Cómo aprender</a>
+
+    <a href="#niveles">Niveles</a>
+
+    <a href="#pasos">Pasos</a>
+
+    <a href="#ejercicios">Ejercicios</a>
+
+    <a href="#tecnicas">Técnicas</a>
+
+    <a href="#beneficios">Beneficios</a>
+
+    <a href="#consejos">Consejos</a>
+
+    <a href="#seguridad">Seguridad</a>
+
+    <a href="#contacto">Contacto</a>
+
+</nav>
+
+
+<!-- =====================================================
+     CÓMO APRENDER A NADAR
+===================================================== -->
+
+<section id="aprender">
+
+    <h2 class="titulo">
+        ¿Cómo pueden aprender a nadar?
+    </h2>
+
+    <p class="subtitulo">
+        Un aprendizaje progresivo, seguro y divertido
+    </p>
+
+    <div class="introduccion">
+
+        <p>
+            Aprender a nadar es un proceso que requiere tiempo,
+            práctica, paciencia y confianza. Cada persona puede
+            aprender a su propio ritmo, por lo que es importante
+            comenzar con ejercicios sencillos y avanzar
+            progresivamente.
+        </p>
+
+        <p>
+            El aprendizaje comienza con la familiarización con
+            el agua. Después se trabajan habilidades como la
+            respiración, la flotación, las patadas y los
+            movimientos de brazos.
+        </p>
+
+        <p>
+            Cuando se dominan las habilidades básicas, se pueden
+            aprender diferentes estilos de natación como crol,
+            espalda, pecho y mariposa.
+        </p>
+
+        <p>
+            Durante todo el proceso es importante practicar en
+            lugares adecuados y contar con la supervisión de
+            una persona responsable o un instructor.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NIVELES
+===================================================== -->
+
+<section id="niveles">
+
+    <h2 class="titulo">
+        Programas de aprendizaje
+    </h2>
+
+    <p class="subtitulo">
+        Diferentes etapas para desarrollar habilidades en el agua
+    </p>
+
+
+    <div class="tarjetas">
+
+
+        <div class="tarjeta">
+
+            <img src="https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?auto=format&fit=crop&w=800&q=80">
+
+            <div class="contenido">
+
+                <div class="numero">1</div>
+
+                <h3>Principiante</h3>
+
+                <p>
+                    Familiarización con el agua, respiración,
+                    flotación y movimientos básicos.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+            <img src="https://images.unsplash.com/photo-1560089000-7433a4ebbd64?auto=format&fit=crop&w=800&q=80">
+
+            <div class="contenido">
+
+                <div class="numero">2</div>
+
+                <h3>Intermedio</h3>
+
+                <p>
+                    Desarrollo de coordinación, desplazamiento
+                    y aprendizaje de diferentes estilos.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+            <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=800&q=80">
+
+            <div class="contenido">
+
+                <div class="numero">3</div>
+
+                <h3>Avanzado</h3>
+
+                <p>
+                    Perfeccionamiento de la técnica, resistencia,
+                    coordinación y velocidad.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PASOS
+===================================================== -->
+
+<section id="pasos">
+
+    <h2 class="titulo">
+        8 pasos para aprender a nadar
+    </h2>
+
+    <p class="subtitulo">
+        Avanza poco a poco y desarrolla cada habilidad
+    </p>
+
+
+    <div class="pasos">
+
+
+        <div class="paso">
+
+            <div class="numero">1</div>
+
+            <div>
+
+                <h3>Familiarizarse con el agua</h3>
+
+                <p>
+                    Acostumbrarse progresivamente al agua y
+                    desarrollar confianza.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="paso">
+
+            <div class="numero">2</div>
+
+            <div>
+
+                <h3>Controlar la respiración</h3>
+
+                <p>
+                    Aprender a inhalar fuera del agua y expulsar
+                    el aire dentro del agua.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="paso">
+
+            <div class="numero">3</div>
+
+            <div>
+
+                <h3>Practicar la flotación</h3>
+
+                <p>
+                    Aprender a mantener el cuerpo equilibrado
+                    sobre el agua.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="paso">
+
+            <div class="numero">4</div>
+
+            <div>
+
+                <h3>Aprender las patadas</h3>
+
+                <p>
+                    Practicar movimientos de piernas para
+                    mejorar el desplazamiento.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="paso">
+
+            <div class="numero">5</div>
+
+            <div>
+
+                <h3>Practicar los brazos</h3>
+
+                <p>
+                    Aprender los movimientos básicos de los
+                    brazos y mantener una posición adecuada.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="paso">
+
+            <div class="numero">6</div>
+
+            <div>
+
+                <h3>Coordinar los movimientos</h3>
+
+                <p>
+                    Coordinar brazos, piernas y respiración
+                    para mejorar la técnica.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="paso">
+
+            <div class="numero">7</div>
+
+            <div>
+
+                <h3>Practicar los estilos</h3>
+
+                <p>
+                    Comenzar a practicar crol, espalda,
+                    pecho y mariposa.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="paso">
+
+            <div class="numero">8</div>
+
+            <div>
+
+                <h3>Mejorar con la práctica</h3>
+
+                <p>
+                    La práctica constante permite mejorar
+                    la resistencia, coordinación y confianza.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BANNER
+===================================================== -->
+
+<section>
+
+    <div class="banner">
+
+        <div>
+
+            <h2>
+                🌊 Aprende paso a paso
+            </h2>
+
+            <p>
+                La natación combina movimiento, coordinación,
+                respiración y confianza.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EJERCICIOS
+===================================================== -->
+
+<section id="ejercicios">
+
+    <h2 class="titulo">
+        Ejercicios básicos
+    </h2>
+
+    <p class="subtitulo">
+        Actividades que ayudan a desarrollar las habilidades
+        necesarias para nadar.
+    </p>
+
+
+    <div class="tarjetas">
+
+
+        <div class="tarjeta">
+
+            <img src="https://images.unsplash.com/photo-1600965962361-9035dbfd1c50?auto=format&fit=crop&w=800&q=80">
+
+            <div class="contenido">
+
+                <h3>🌬️ Respiración</h3>
+
+                <p>
+                    Ayuda a controlar el aire y mantener un
+                    ritmo adecuado durante la natación.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+            <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=800&q=80">
+
+            <div class="contenido">
+
+                <h3>🌊 Flotación</h3>
+
+                <p>
+                    Permite desarrollar equilibrio y confianza
+                    dentro del agua.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+            <img src="https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?auto=format&fit=crop&w=800&q=80">
+
+            <div class="contenido">
+
+                <h3>🦵 Patada</h3>
+
+                <p>
+                    Permite mejorar el movimiento de las piernas
+                    y el desplazamiento.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+            <img src="https://images.unsplash.com/photo-1560089000-7433a4ebbd64?auto=format&fit=crop&w=800&q=80">
+
+            <div class="contenido">
+
+                <h3>🤸 Coordinación</h3>
+
+                <p>
+                    Ayuda a unir correctamente brazos, piernas
+                    y respiración.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TÉCNICAS DE NATACIÓN
+===================================================== -->
+
+<section id="tecnicas">
+
+    <h2 class="titulo">
+        Principales técnicas de natación
+    </h2>
+
+    <p class="subtitulo">
+        Conoce los cuatro estilos principales
+    </p>
+
+
+    <div class="tecnicas">
+
+
+        <!-- CROL -->
+
+        <div class="tecnica">
+
+            <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=900&q=80">
+
+            <div class="texto">
+
+                <h3>🏊 Crol</h3>
+
+                <p>
+                    Es uno de los estilos más utilizados y rápidos.
+                    Se caracteriza por movimientos alternados de
+                    los brazos y patadas continuas de las piernas.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ESPALDA -->
+
+        <div class="tecnica">
+
+            <img src="https://images.unsplash.com/photo-1560089000-7433a4ebbd64?auto=format&fit=crop&w=900&q=80">
+
+            <div class="texto">
+
+                <h3>🏊‍♂️ Espalda</h3>
+
+                <p>
+                    Se realiza con el cuerpo mirando hacia arriba.
+                    Los brazos se mueven de manera alternada y
+                    las piernas realizan patadas continuas.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PECHO -->
+
+        <div class="tecnica">
+
+            <img src="https://images.unsplash.com/photo-1600965962361-9035dbfd1c50?auto=format&fit=crop&w=900&q=80">
+
+            <div class="texto">
+
+                <h3>🏊 Pecho</h3>
+
+                <p>
+                    Los brazos y las piernas realizan movimientos
+                    coordinados y simultáneos. Requiere precisión
+                    y buena coordinación.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MARIPOSA -->
+
+        <div class="tecnica">
+
+            <img src="https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?auto=format&fit=crop&w=900&q=80">
+
+            <div class="texto">
+
+                <h3>🦋 Mariposa</h3>
+
+                <p>
+                    Es un estilo exigente que requiere coordinación,
+                    fuerza y movimientos simultáneos de los brazos
+                    junto con la ondulación del cuerpo.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BENEFICIOS
+===================================================== -->
+
+<section id="beneficios">
+
+    <h2 class="titulo">
+        Beneficios de la natación
+    </h2>
+
+    <p class="subtitulo">
+        La natación contribuye al bienestar físico y mental
+    </p>
+
+
+    <div class="beneficios">
+
+
+        <div class="beneficio">
+
+            <div class="icono">💪</div>
+
+            <h3>Fortalece el cuerpo</h3>
+
+            <p>
+                Trabaja diferentes grupos musculares y ayuda
+                a mejorar la condición física.
+            </p>
+
+        </div>
+
+
+        <div class="beneficio">
+
+            <div class="icono">❤️</div>
+
+            <h3>Salud cardiovascular</h3>
+
+            <p>
+                Es una actividad que favorece la resistencia
+                cardiovascular.
+            </p>
+
+        </div>
+
+
+        <div class="beneficio">
+
+            <div class="icono">🧠</div>
+
+            <h3>Reduce el estrés</h3>
+
+            <p>
+                La actividad física puede ayudar a relajarse
+                y mejorar el bienestar.
+            </p>
+
+        </div>
+
+
+        <div class="beneficio">
+
+            <div class="icono">🏊</div>
+
+            <h3>Mejora la coordinación</h3>
+
+            <p>
+                Ayuda a coordinar diferentes movimientos
+                del cuerpo.
+            </p>
+
+        </div>
+
+
+        <div class="beneficio">
+
+            <div class="icono">🌊</div>
+
+            <h3>Seguridad acuática</h3>
+
+            <p>
+                Aprender a nadar desarrolla habilidades
+                importantes para desenvolverse en el agua.
+            </p>
+
+        </div>
+
+
+        <div class="beneficio">
+
+            <div class="icono">😊</div>
+
+            <h3>Más confianza</h3>
+
+            <p>
+                La práctica progresiva ayuda a desarrollar
+                confianza y autonomía.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONSEJOS
+===================================================== -->
+
+<section id="consejos">
+
+    <div class="consejos">
+
+        <h2>
+            💡 Consejos para aprender mejor
+        </h2>
+
+        <ul>
+
+            <li>Practicar de forma constante y progresiva.</li>
+
+            <li>Mantener la calma dentro del agua.</li>
+
+            <li>Escuchar las indicaciones del instructor.</li>
+
+            <li>Realizar calentamiento antes de nadar.</li>
+
+            <li>Respetar las normas de la piscina.</li>
+
+            <li>Practicar en lugares adecuados y seguros.</li>
+
+            <li>No intentar ejercicios demasiado difíciles sin preparación.</li>
+
+            <li>Pedir ayuda cuando sea necesario.</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ERRORES
+===================================================== -->
+
+<section>
+
+    <h2 class="titulo">
+        Errores comunes al aprender
+    </h2>
+
+    <p class="subtitulo">
+        Conocerlos permite mejorar el proceso de aprendizaje
+    </p>
+
+
+    <div class="errores">
+
+
+        <div class="error">
+
+            <h3>❌ No controlar la respiración</h3>
+
+            <p>
+                Una respiración desordenada puede dificultar
+                los movimientos y aumentar el cansancio.
+            </p>
+
+        </div>
+
+
+        <div class="error">
+
+            <h3>❌ Querer aprender demasiado rápido</h3>
+
+            <p>
+                Es importante respetar el proceso y avanzar
+                progresivamente.
+            </p>
+
+        </div>
+
+
+        <div class="error">
+
+            <h3>❌ No escuchar al instructor</h3>
+
+            <p>
+                Seguir las indicaciones ayuda a realizar los
+                ejercicios correctamente y con seguridad.
+            </p>
+
+        </div>
+
+
+        <div class="error">
+
+            <h3>❌ No practicar regularmente</h3>
+
+            <p>
+                La práctica constante es necesaria para mejorar
+                la coordinación y las habilidades acuáticas.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MATERIALES
+===================================================== -->
+
+<section>
+
+    <h2 class="titulo">
+        Materiales para la natación
+    </h2>
+
+    <p class="subtitulo">
+        Elementos que pueden utilizarse durante la práctica
+    </p>
+
+
+    <div class="material">
+
+
+        <div>
+
+            <span>🥽</span>
+
+            <h3>Gafas</h3>
+
+            <p>
+                Ayudan a proteger los ojos y mejorar la visión
+                debajo del agua.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <span>🏊</span>
+
+            <h3>Gorra</h3>
+
+            <p>
+                Ayuda a mantener el cabello recogido durante
+                la práctica.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <span>🛟</span>
+
+            <h3>Material de apoyo</h3>
+
+            <p>
+                Puede utilizarse en ejercicios específicos
+                bajo supervisión.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <span>👕</span>
+
+            <h3>Traje de baño</h3>
+
+            <p>
+                Debe ser cómodo y apropiado para realizar
+                actividades acuáticas.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SEGURIDAD
+===================================================== -->
+
+<section id="seguridad">
+
+    <h2 class="titulo">
+        🛟 Seguridad e higiene
+    </h2>
+
+    <p class="subtitulo">
+        La seguridad debe ser una prioridad durante la práctica
+    </p>
+
+
+    <div class="seguridad">
+
+        <h3>Supervisión</h3>
+
+        <p>
+            Las personas que están aprendiendo deben practicar
+            bajo la supervisión de una persona responsable o
+            instructor.
+        </p>
+
+
+        <h3>Conocer el lugar</h3>
+
+        <p>
+            Es importante conocer las características y la
+            profundidad del lugar antes de ingresar al agua.
+        </p>
+
+
+        <h3>Respetar las normas</h3>
+
+        <p>
+            Se deben respetar las reglas de la piscina y
+            seguir las instrucciones del personal responsable.
+        </p>
+
+
+        <h3>No nadar solo</h3>
+
+        <p>
+            Las personas que todavía están aprendiendo no
+            deben practicar sin supervisión.
+        </p>
+
+
+        <h3>Higiene</h3>
+
+        <p>
+            Es importante mantener una buena higiene personal
+            y respetar las normas de limpieza de la piscina.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FRASE FINAL
+===================================================== -->
+
+<section>
+
+    <div class="frase">
+
+        <h2>
+            🌊 La natación es una habilidad para toda la vida
+        </h2>
+
+        <p>
+            Aprende, practica y disfruta de la natación
+            siempre de manera segura.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACTOS - SUCRE
+===================================================== -->
+
+<section id="contacto">
+
+    <h2 class="titulo">
+        📞 Contáctanos
+    </h2>
+
+    <p class="subtitulo">
+        Técnicas y Estrategias de Natación
+        <br>
+        📍 Sucre - Bolivia
+    </p>
+
+
+    <div class="contacto">
+
+
+        <!-- UBICACIÓN -->
+
+        <div class="contacto-card">
+
+            <div class="icono">
+                📍
+            </div>
+
+            <h3>Ubicación</h3>
+
+            <p>
+                <strong>Sucre, Bolivia</strong>
+            </p>
+
+            <p>
+                Piscina Olimpica
+            </p>
+
+        </div>
+
+
+        <!-- TELÉFONO -->
+
+        <div class="contacto-card">
+
+            <div class="icono">
+                📱
+            </div>
+
+            <h3>Teléfono</h3>
+
+            <p>
+                <strong>+591 71165703</strong>
+            </p>
+
+            <p>
+                Comunícate con nosotros
+                para obtener información.
+            </p>
+
+        </div>
+
+
+        <!-- WHATSAPP -->
+
+        <div class="contacto-card">
+
+            <div class="icono">
+                💬
+            </div>
+
+            <h3>WhatsApp</h3>
+
+            <p>
+                <strong>+591 71165703</strong>
+            </p>
+
+            <p>
+                Escríbenos para realizar
+                consultas sobre el proyecto.
+            </p>
+
+        </div>
+
+
+        <!-- CORREO -->
+
+        <div class="contacto-card">
+
+            <div class="icono">
+                📧
+            </div>
+
+            <h3>Correo electrónico</h3>
+
+            <p>
+                <strong>
+                    tecnicasnatacion@gmail.com
+                </strong>
+            </p>
+
+            <p>
+                Envíanos tus consultas
+                y sugerencias.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PIE DE PÁGINA
+===================================================== -->
+
+<footer>
+
+    <h3>
+        🏊‍♀️ Técnicas y Estrategias de Natación
+    </h3>
+
+    <p>
+        📍 Sucre - Bolivia
+    </p>
+
+    <p>
+        📞 +591 71165703
+    </p>
+
+    <p>
+        Ubicacion;Piscina Olimpica
+    </p>
+
+    <p>
+        📧 tecnicasnatacion@gmail.com
+    </p>
+
+    <br>
+
+    <p>
+        Proyecto de Informática
+    </p>
+
+    <p>
+        Aprende las técnicas, estrategias, beneficios
+        y medidas de seguridad de la natación.
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 - Proyecto educativo
+    </p>
+
+</footer>
+
+
+</body>
+</html>
